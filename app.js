@@ -11,10 +11,13 @@ const publicFolderPath = path.resolve(__dirname, './public');
 app.use(express.static(publicFolderPath));
 
 //Levantar el server
-const APP_PORT = 1234;
-app.listen(APP_PORT, () => {
+const APP_PORT = process.env.PORT || 3000
+app.listen(   APP_PORT, () => {
     console.log('Servidor funcionando en puerto' + APP_PORT)
 })
+
+
+
 
 //Definir rutas que devuelvan HTML
 app.get('/', (req, res) =>{
